@@ -1,0 +1,62 @@
+[
+	{
+		"articleId": "TELCO_BUMPER_SLIDER",
+		"ddmStructureKey": "telco-bumper-slider-structure",
+		"ddmTemplateKey": "TELCO_BUMPER_SLIDER",
+		"permissions": [
+			{
+				"actionIds": [
+					"VIEW"
+				],
+				"roleName": "Guest",
+				"scope": 4
+			}
+		],
+		"title": "TELCO_BUMPER_SLIDER"
+	},
+	{
+		"articleId": "TELCO_HIGHLIGHT_SLIDER",
+		"ddmStructureKey": "telco-highlight-slider-structure",
+		"ddmTemplateKey": "TELCO_HIGHLIGHT_SLIDER",
+		"permissions": [
+			{
+				"actionIds": [
+					"VIEW"
+				],
+				"roleName": "Guest",
+				"scope": 4
+			}
+		],
+		"title": "TELCO_HIGHLIGHT_SLIDER"
+	},
+	{
+		"articleId": "TELCO_NEWSLETTER",
+		"ddmStructureKey": "telco-newsletter-structure",
+		"ddmTemplateKey": "TELCO_NEWSLETTER",
+		"permissions": [
+			{
+				"actionIds": [
+					"VIEW"
+				],
+				"roleName": "Guest",
+				"scope": 4
+			}
+		],
+		"title": "TELCO_NEWSLETTER"
+	},
+	{
+		"articleId": "TELCO_ACCOUNT",
+		"ddmStructureKey": "telco-account-dashboard-structure",
+		"ddmTemplateKey": "TELCO_ACCOUNT",
+		"permissions": [
+			{
+				"actionIds": [
+					"VIEW"
+				],
+				"roleName": "Guest",
+				"scope": 4
+			}
+		],
+		"title": "TELCO_ACCOUNT"
+	}
+]

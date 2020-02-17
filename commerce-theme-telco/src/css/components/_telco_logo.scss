@@ -1,0 +1,12 @@
+.telco-logo {
+	&-icon {
+		font-size: 4em;
+		transform: scale(2, 2);
+	}
+
+	@media screen and (max-width: 375px) {
+		a {
+			height: 60px;
+		}
+	}
+}

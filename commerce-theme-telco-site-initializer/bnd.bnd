@@ -1,0 +1,4 @@
+Bundle-Name: commerce-theme-telco-site-initializer
+Bundle-SymbolicName: com.liferay.commerce.theme.telco.site.initializer
+Bundle-Version: 1.0.0
+Web-ContextPath: /commerce-theme-telco-site-initializer

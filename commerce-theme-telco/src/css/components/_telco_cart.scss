@@ -1,0 +1,235 @@
+.telco-cart {
+	.commerce-cart {
+		$minicart-width: 550px;
+
+		@function getOpeningTranslation($direction) {
+			@return translateX(
+				if($direction == left, -1, 1) *
+					($minicart-width + $liferay-sidebars-width)
+			);
+		}
+
+		display: flex;
+		flex-direction: column;
+		height: calc(100vh - #{$topbar-height});
+		max-width: $minicart-width;
+		position: absolute;
+		right: 0;
+		top: 0;
+		transition: all ease 200ms;
+		width: $minicart-width;
+
+		@media screen and (max-width: $bp-small) {
+			height: calc(100vh - #{$topbar-height-small});
+		}
+
+		.has-control-menu.signed-in & {
+			height: calc(100vh - #{$liferay-topbar-height});
+
+			@media screen and (max-width: $bp-small) {
+				height: calc(100vh - #{$liferay-topbar-height-small});
+			}
+		}
+
+		&::before {
+			background: rgba(42, 42, 42, 0.7);
+			bottom: 0;
+			content: '';
+			left: 0;
+			position: fixed;
+			right: 0;
+			top: 0;
+			transition: all ease 200ms 200ms;
+		}
+
+		&:not(.is-open)::before {
+			opacity: 0;
+		}
+
+		&:not(.is-open) {
+			transform: getOpeningTranslation(right);
+		}
+
+		.rtl & {
+			left: 0;
+		}
+
+		.rtl &:not(.is-open) {
+			transform: getOpeningTranslation(left);
+		}
+
+		&__container {
+			background-color: $color-bg;
+			box-shadow: -20px 0 40px $color-shadow;
+			display: flex;
+			flex-direction: column;
+			height: calc(100vh - #{$topbar-height});
+			position: absolute;
+			right: 0;
+			top: $topbar-height;
+			width: 100%;
+
+			@media screen and (max-width: $bp-small) {
+				height: calc(100vh - #{$topbar-height-small});
+				top: $topbar-height-small;
+			}
+
+			.has-control-menu.signed-in & {
+				height: calc(
+					100vh - #{$liferay-topbar-height + $topbar-height}
+				);
+
+				@media screen and (max-width: $bp-small) {
+					height: calc(
+						100vh - #{$liferay-topbar-height-small +
+							$topbar-height-small}
+					);
+				}
+			}
+		}
+
+		&__close {
+			background-color: $stroke !important;
+			bottom: 100%;
+			color: #fff !important;
+			position: absolute !important;
+			right: 0;
+			top: 0;
+
+			&:hover {
+				color: #fff;
+			}
+
+			&::before {
+				mix-blend-mode: color;
+			}
+		}
+
+		&__top {
+			align-items: center;
+			background-color: $stroke;
+			color: $color-bg-alt;
+			display: flex;
+			font-size: 15px;
+			height: 50px;
+			justify-content: space-between;
+			padding: 10px;
+			position: relative;
+
+			@media only screen and (max-width: $bp-small) {
+				font-size: 13px;
+				height: 45px;
+			}
+
+			a {
+				color: currentColor;
+				font-size: 12px;
+				font-weight: 600;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		&__content {
+			background: white;
+			flex-grow: 1;
+			overflow: auto;
+			position: relative;
+
+			.empty-cart {
+				align-items: center;
+				display: flex;
+				flex-direction: column;
+				height: 100%;
+				justify-content: center;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 100%;
+
+				&-icon {
+					font-size: 13em;
+					margin: -0.5em 0 -0.25em;
+					opacity: 0.3;
+				}
+
+				&-label {
+					font-size: 20px;
+					text-align: center;
+
+					p {
+						margin: 0;
+					}
+
+					.stress {
+						color: $color-theme;
+					}
+				}
+			}
+		}
+
+		&__footer {
+			background: white;
+			border-top: 1px solid #f2f2f2;
+			font-weight: bold;
+			position: relative;
+
+			a {
+				text-decoration: none;
+				transition: background-color 0.2s ease-out;
+
+				&:hover {
+					background-color: $color-theme-dark;
+					color: white;
+					transition: background-color 0.2s ease-in;
+				}
+			}
+		}
+
+		&__totals {
+			align-items: baseline;
+			color: $stroke;
+			display: flex;
+			flex-wrap: wrap;
+			margin: 0;
+			padding: 15px 45px;
+			text-align: right;
+
+			dt {
+				flex: 1 1 60%;
+				font-size: 12px;
+				font-weight: normal;
+				margin: 0;
+				opacity: 0.75;
+				text-transform: capitalize;
+
+				&.final-total + dd {
+					font-size: 16px;
+					margin-top: 8px;
+				}
+			}
+
+			dd {
+				flex: 1 1 40%;
+				font-size: 12px;
+				font-weight: 600;
+				margin-bottom: 0;
+
+				big {
+					font-size: 18px;
+					font-weight: 600;
+				}
+			}
+		}
+
+		.commerce-button--block {
+			border-radius: 0;
+
+			@media only screen and (max-width: $bp-small) {
+				height: 60px;
+			}
+		}
+	}
+}
