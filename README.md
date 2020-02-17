@@ -22,7 +22,7 @@ Follow the instructions to point towards your local instance of Liferay.
 
 ### Deploying the Site Initializer
 
-` $ cd commerce-theme-telco`
+` $ cd commerce-theme-telco-site-initializer`
 
 ` $ ./gradlew deploy -Pauto.deploy.dir="/path/to/liferay/deploy"`
 
