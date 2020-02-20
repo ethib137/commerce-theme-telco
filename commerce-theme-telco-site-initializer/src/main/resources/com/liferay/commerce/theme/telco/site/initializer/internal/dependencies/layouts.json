@@ -592,5 +592,10 @@
 			}
 		],
 		"privateLayout": false
+	},
+	{
+		"layoutType": "content",
+		"name": "test-content-page",
+		"privateLayout": false
 	}
 ]

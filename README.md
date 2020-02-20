@@ -26,4 +26,8 @@ Follow the instructions to point towards your local instance of Liferay.
 
 ` $ ./gradlew deploy -Pauto.deploy.dir="/path/to/liferay/deploy"`
 
+## Docs
+
+[docs](./DOCS.md)
+
 ## Issues & Questions Welcome

@@ -153,7 +153,7 @@ public class TelcoSiteInitializer implements SiteInitializer {
 		ResourceBundle resourceBundle = ResourceBundleUtil.getBundle(
 			"content.Language", locale, getClass());
 
-		return LanguageUtil.get(resourceBundle, "telco") + " Hello EVAN";
+		return LanguageUtil.get(resourceBundle, "telco");
 	}
 
 	@Override
@@ -266,7 +266,7 @@ public class TelcoSiteInitializer implements SiteInitializer {
 				_log.info(_TELCO_THEME_ID + " is not registered");
 			}
 
-			return true;
+			return false;
 		}
 
 		return true;
@@ -516,7 +516,7 @@ public class TelcoSiteInitializer implements SiteInitializer {
 
 		File file = FileUtil.createTempFile(inputStream);
 
-		_cpFileImporter.updateLogo(file, true, true, serviceContext);
+		_cpFileImporter.updateLogo(file, false, true, serviceContext);
 	}
 
 	protected void updateThemeSetting(
